@@ -8,6 +8,13 @@ const menuItemSchema = z.object({
 	comment: z.string().optional(),
 });
 
+const menuSectionSchema = z.object({
+	title: z.string().optional(),
+	comment: z.string().optional(),
+	note: z.string().optional(),
+	items: z.array(menuItemSchema),
+});
+
 const dailyMenuCollection = defineCollection({
 	loader: glob({ pattern: "tageskarte.md", base: "./src/content" }),
 	schema: z.object({
@@ -17,16 +24,13 @@ const dailyMenuCollection = defineCollection({
 });
 
 const menuCollection = defineCollection({
-	loader: glob({ pattern: "sommerspecials.md", base: "./src/content" }),
+	loader: glob({ pattern: "*.md", base: "./src/content/menu" }),
 	schema: z.object({
 		title: z.string(),
 		comment: z.string().optional(),
-		sections: z.array(
-			z.object({
-				title: z.string(),
-				items: z.array(menuItemSchema),
-			}),
-		),
+		note: z.string().optional(),
+		order: z.number().optional(),
+		sections: z.array(menuSectionSchema),
 	}),
 });
 
