@@ -59,7 +59,11 @@ function formatPrice(price: string) {
       {
         menu.data.items.map((item) => (
           <li style="margin-bottom: 1rem;">
-            <strong>{item.name}</strong> — {formatPrice(item.price)}
+            <strong>{item.name}</strong>
+            {item.allergens && (
+              <span style="color: #555;"> ({item.allergens})</span>
+            )}{" "}
+            — {formatPrice(item.price)}
             {item.comment && (
               <p style="font-style: italic; margin: 0; color: #555;">
                 {item.comment}
@@ -89,7 +93,11 @@ function formatPrice(price: string) {
               <ul>
                 {section.items.map((item) => (
                   <li style="margin-bottom: 1rem;">
-                    <strong>{item.name}</strong> — {formatPrice(item.price)}
+                    <strong>{item.name}</strong>
+                    {item.allergens && (
+                      <span style="color: #555;"> ({item.allergens})</span>
+                    )}{" "}
+                    — {formatPrice(item.price)}
                     {item.comment && (
                       <p style="font-style: italic; margin: 0; color: #555;">
                         {item.comment}
