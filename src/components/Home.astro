@@ -9,6 +9,11 @@ const menu = await getEntry("daily-menu", "tageskarte");
 if (!menu) {
 	throw new Error("Missing content entry: daily-menu/tageskarte");
 }
+
+const karte = await getEntry("menu", "sommerspecials");
+if (!karte) {
+	throw new Error("Missing content entry: menu/sommerspecials");
+}
 ---
 
 <header class="relative">
@@ -65,6 +70,31 @@ if (!menu) {
 
   <section id="karte" class="scroll-mt-24">
     <h2>Karte</h2>
+    <h3>{karte.data.title}</h3>
+    {
+      karte.data.comment && (
+        <p style="font-style: italic; color: #555;">{karte.data.comment}</p>
+      )
+    }
+    {
+      karte.data.sections.map((section) => (
+        <div style="margin-top: 1.5rem;">
+          <h4>{section.title}</h4>
+          <ul>
+            {section.items.map((item) => (
+              <li style="margin-bottom: 1rem;">
+                <strong>{item.name}</strong> — {item.price} €
+                {item.comment && (
+                  <p style="font-style: italic; margin: 0; color: #555;">
+                    {item.comment}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
   </section>
   <section id="kontakt" class="scroll-mt-24">
     <h2>Kontakt</h2>
