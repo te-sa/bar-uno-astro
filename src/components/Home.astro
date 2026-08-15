@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import { getCollection, getEntry } from "astro:content";
 import HeroImage from "../assets/bar-front.webp";
 import UnoLogo from "../assets/uno-logo.svg";
+import AllergenLinks from "./AllergenLinks.astro";
 import PageMain from "./PageMain.astro";
 
 const menu = await getEntry("daily-menu", "tageskarte");
@@ -60,9 +61,7 @@ function formatPrice(price: string) {
         menu.data.items.map((item) => (
           <li style="margin-bottom: 1rem;">
             <strong>{item.name}</strong>
-            {item.allergens && (
-              <span style="color: #555;"> ({item.allergens})</span>
-            )}{" "}
+            {item.allergens && <AllergenLinks allergens={item.allergens} />}{" "}
             — {formatPrice(item.price)}
             {item.comment && (
               <p style="font-style: italic; margin: 0; color: #555;">
@@ -95,7 +94,7 @@ function formatPrice(price: string) {
                   <li style="margin-bottom: 1rem;">
                     <strong>{item.name}</strong>
                     {item.allergens && (
-                      <span style="color: #555;"> ({item.allergens})</span>
+                      <AllergenLinks allergens={item.allergens} />
                     )}{" "}
                     — {formatPrice(item.price)}
                     {item.comment && (
