@@ -1,0 +1,86 @@
+---
+import { getCollection } from "astro:content";
+import ChevronLeft from "../assets/chevron-left.svg";
+import AllergenLinks from "../components/AllergenLinks.astro";
+import PageMain from "../components/PageMain.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
+import Layout from "../layouts/Layout.astro";
+
+const karteSections = (await getCollection("menu")).sort(
+	(a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
+);
+
+function formatPrice(price: string) {
+	return /^\d/.test(price) ? `${price} €` : price;
+}
+---
+
+<Layout title="Karte">
+	<SiteNav>
+		<a
+			href="/"
+			class="container mx-auto flex items-center gap-1.5 p-4"
+		>
+			<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
+			Zur Startseite
+		</a>
+	</SiteNav>
+	<PageMain>
+		<h1>Karte</h1>
+		<nav aria-label="Kartenabschnitte">
+			<ul
+				class="flex flex-wrap gap-x-2 gap-y-1 [&>li:not(:last-child)::after]:ms-2 [&>li:not(:last-child)::after]:content-['·']"
+			>
+				{
+					karteSections.map((karte) => (
+						<li>
+							<a href={`#${karte.id}`}>{karte.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+		</nav>
+		{
+			karteSections.map((karte) => (
+				<section id={karte.id} class="scroll-mt-24" style="margin-top: 2rem;">
+					<h2>{karte.data.title}</h2>
+					{karte.data.comment && (
+						<p style="font-style: italic; color: #555;">{karte.data.comment}</p>
+					)}
+					{karte.data.sections.map((section) => (
+						<div style="margin-top: 1.5rem;">
+							{section.title && <h3>{section.title}</h3>}
+							{section.comment && (
+								<p style="font-style: italic; color: #555;">{section.comment}</p>
+							)}
+							<ul>
+								{section.items.map((item) => (
+									<li style="margin-bottom: 1rem;">
+										<strong>{item.name}</strong>
+										{item.allergens && (
+											<AllergenLinks allergens={item.allergens} />
+										)}{" "}
+										— {formatPrice(item.price)}
+										{item.comment && (
+											<p style="font-style: italic; margin: 0; color: #555;">
+												{item.comment}
+											</p>
+										)}
+									</li>
+								))}
+							</ul>
+							{section.note && (
+								<p style="font-size: 0.9rem; color: #555;">{section.note}</p>
+							)}
+						</div>
+					))}
+					{karte.data.note && (
+						<p style="font-size: 0.9rem; color: #555;">{karte.data.note}</p>
+					)}
+				</section>
+			))
+		}
+	</PageMain>
+	<SiteFooter />
+</Layout>

@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import { getCollection, getEntry } from "astro:content";
+import { getEntry } from "astro:content";
 import HeroImage from "../assets/bar-front.webp";
 import UnoLogo from "../assets/uno-logo.svg";
 import AllergenLinks from "./AllergenLinks.astro";
@@ -10,10 +10,6 @@ const menu = await getEntry("daily-menu", "tageskarte");
 if (!menu) {
 	throw new Error("Missing content entry: daily-menu/tageskarte");
 }
-
-const karteSections = (await getCollection("menu")).sort(
-	(a, b) => (a.data.order ?? 0) - (b.data.order ?? 0),
-);
 
 function formatPrice(price: string) {
 	return /^\d/.test(price) ? `${price} €` : price;
@@ -72,51 +68,11 @@ function formatPrice(price: string) {
         ))
       }
     </ul>
+    <h3>
+      <a href="/karte">Zur unserer Abendkarte</a>
+    </h3>
   </section>
 
-  <section id="karte" class="scroll-mt-24">
-    <h2>Karte</h2>
-    {
-      karteSections.map((karte) => (
-        <div style="margin-top: 2rem;">
-          <h3>{karte.data.title}</h3>
-          {karte.data.comment && (
-            <p style="font-style: italic; color: #555;">{karte.data.comment}</p>
-          )}
-          {karte.data.sections.map((section) => (
-            <div style="margin-top: 1.5rem;">
-              {section.title && <h4>{section.title}</h4>}
-              {section.comment && (
-                <p style="font-style: italic; color: #555;">{section.comment}</p>
-              )}
-              <ul>
-                {section.items.map((item) => (
-                  <li style="margin-bottom: 1rem;">
-                    <strong>{item.name}</strong>
-                    {item.allergens && (
-                      <AllergenLinks allergens={item.allergens} />
-                    )}{" "}
-                    — {formatPrice(item.price)}
-                    {item.comment && (
-                      <p style="font-style: italic; margin: 0; color: #555;">
-                        {item.comment}
-                      </p>
-                    )}
-                  </li>
-                ))}
-              </ul>
-              {section.note && (
-                <p style="font-size: 0.9rem; color: #555;">{section.note}</p>
-              )}
-            </div>
-          ))}
-          {karte.data.note && (
-            <p style="font-size: 0.9rem; color: #555;">{karte.data.note}</p>
-          )}
-        </div>
-      ))
-    }
-  </section>
   <section id="kontakt" class="scroll-mt-24">
     <h2>Kontakt</h2>
 
