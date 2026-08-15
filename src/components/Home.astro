@@ -14,6 +14,9 @@ if (!menu) {
 function formatPrice(price: string) {
 	return /^\d/.test(price) ? `${price} €` : price;
 }
+
+const mapsDirectionsUrl =
+	"https://www.google.com/maps/dir/?api=1&destination=BAR+UNO%2C+Ludwigstra%C3%9Fe+11%2C+80539+M%C3%BCnchen";
 ---
 
 <header class="relative">
@@ -34,8 +37,13 @@ function formatPrice(price: string) {
   <section id="zu-uns" class="scroll-mt-24">
     <h2>Willkommen in der Bar Uno</h2>
     <p>
-      Eine für alles. Wir sind die Bar für alle Gelegenheiten im Herzen von
-      München.
+      Eine für alles. Wir sind die Bar für alle Gelegenheiten 
+      <a
+        href={mapsDirectionsUrl}
+        target="_blank"
+        class="underline"
+        rel="noopener noreferrer">im Herzen von München</a
+      >.
     </p>
     <p>
       Vom morgendlichen Kaffee mit Cornetto über den preiswerten Business-Lunch
@@ -89,6 +97,14 @@ function formatPrice(price: string) {
     <h2>Kontakt</h2>
 
     <p>E-Mail: <a href="mailto:info@bar-uno.de">info@bar-uno.de</a></p>
+    <p>
+      <a
+        href={mapsDirectionsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        >Ludwigstraße 11, 80539 München</a
+      >
+    </p>
 
     <h3>Reservierung unter</h3>
     <p>Tel: <a href="tel:+498924206252">089 242 062 52</a></p>
