@@ -1,6 +1,32 @@
 ---
+import { getEntry, render } from "astro:content";
+import ChevronLeft from "../assets/chevron-left.svg";
+import PageMain from "../components/PageMain.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
 import Layout from "../layouts/Layout.astro";
+
+const siteNotice = await getEntry("site-notice", "impressum");
+if (!siteNotice) {
+	throw new Error("Missing content entry: site-notice/impressum");
+}
+
+const { Content } = await render(siteNotice);
 ---
 
-<Layout title="Impressum">
+<Layout title={siteNotice.data.title}>
+	<SiteNav>
+		<a
+			href="/"
+			class="container mx-auto flex items-center gap-1.5 p-4"
+		>
+			<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
+			Zur Startseite
+		</a>
+	</SiteNav>
+	<PageMain>
+		<h1>{siteNotice.data.title}</h1>
+		<Content />
+	</PageMain>
+	<SiteFooter />
 </Layout>
