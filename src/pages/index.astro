@@ -1,8 +1,22 @@
 ---
 import Home from "../components/Home.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-	<Home />
+	<Home>
+		<SiteNav>
+			<ul
+				class="flex justify-center items-center gap-2 py-4 [&>li:not(:last-child)::after]:ms-2 [&>li:not(:last-child)::after]:content-['·']"
+			>
+				<li><a href="#zu-uns">Zu uns</a></li>
+				<li><a href="#specials">Specials</a></li>
+				<li><a href="#karte">Karte</a></li>
+				<li><a href="#kontakt">Kontakt</a></li>
+			</ul>
+		</SiteNav>
+	</Home>
+	<SiteFooter />
 </Layout>

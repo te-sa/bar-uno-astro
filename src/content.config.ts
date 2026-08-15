@@ -16,6 +16,14 @@ const dailyMenuCollection = defineCollection({
 	}),
 });
 
+const privacyPolicyCollection = defineCollection({
+	loader: glob({ pattern: "datenschutz.md", base: "./src/content" }),
+	schema: z.object({
+		title: z.string(),
+	}),
+});
+
 export const collections = {
 	"daily-menu": dailyMenuCollection,
+	"privacy-policy": privacyPolicyCollection,
 };

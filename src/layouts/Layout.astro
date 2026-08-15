@@ -31,6 +31,14 @@ const title = Astro.props.title ?? "Bar Uno";
     min-height: 100%;
   }
 
+  main h1 {
+    font-size: clamp(1.75rem, 1.35rem + 1.8vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: -0.025em;
+    margin-block: 0 0.75rem;
+  }
+
   h2 {
     font-size: clamp(1.375rem, 1.1rem + 1.2vw, 2rem);
     font-weight: 700;
@@ -41,6 +49,10 @@ const title = Astro.props.title ?? "Bar Uno";
 
   main > section:first-child h2 {
     margin-block-start: 0;
+  }
+
+  main > h1 + h2 {
+    margin-block-start: 1.5rem;
   }
 
   h2 + h3 {

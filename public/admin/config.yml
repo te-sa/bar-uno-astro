@@ -20,3 +20,9 @@ singletons:
           - { label: Gericht, name: name, widget: string }
           - { label: Preis, name: price, widget: string, hint: "z.B. 12,50" }
           - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Allergene, Beilagen oder Beschreibung" }
+  - name: privacy-policy
+    label: Datenschutz
+    file: /src/content/datenschutz.md
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Inhalt", name: body, widget: markdown }
