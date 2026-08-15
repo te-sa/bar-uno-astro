@@ -1,5 +1,6 @@
 ---
 title: Sommerspecials
+order: 9
 comment: Frische Inspirationen und fruchtige Aromen für euch kreiert von unserem Barteam.
 sections:
   - title: Aperitiv
