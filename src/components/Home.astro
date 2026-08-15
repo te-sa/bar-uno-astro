@@ -1,7 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
+import CocktailImage from "../assets/cocktail.webp";
 import HeroImage from "../assets/bar-front.webp";
+import InstagramIcon from "../assets/instagram.svg";
+import OutsideFrontImage from "../assets/outside-front.webp";
 import UnoLogo from "../assets/uno-logo.svg";
 import AllergenLinks from "./AllergenLinks.astro";
 import PageMain from "./PageMain.astro";
@@ -58,36 +61,6 @@ const googleReviewsUrl =
       Pinsa. Unsere Gäste schätzen den persönlichen Service eines kleinen,
       ambitionierten Teams. Wir mögen, was wir tun und das merkt man.
     </p>
-    <h3>
-      <a href="https://www.instagram.com/barunomunich/">Mehr auf Instagram</a>
-    </h3>
-    <h3>Unsere Google Reviews</h3>
-    <p>
-      <a
-        href={googleReviewsUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="underline">{googleReviews.data.ratingLabel}</a
-      >
-    </p>
-    <ul class="mt-4 grid gap-4 sm:grid-cols-3">
-      {
-        googleReviews.data.items.map((review) => (
-          <li class="border-2 border-black bg-white p-4 shadow-[4px_4px_0_0_#000]">
-            <p
-              class="m-0 tracking-widest text-amber-500"
-              aria-label={`${review.stars} von 5 Sternen`}
-            >
-              {"★".repeat(review.stars)}
-              <span class="text-amber-500/25">{"★".repeat(5 - review.stars)}</span>
-            </p>
-            <blockquote class="m-0 mt-2">
-              <p class="m-0 text-sm leading-relaxed">„{review.text}“</p>
-            </blockquote>
-          </li>
-        ))
-      }
-    </ul>
   </section>
 
   <section id="specials" class="scroll-mt-24">
@@ -123,6 +96,69 @@ const googleReviewsUrl =
         >
       </span>
       <span class="shrink-0 text-2xl" aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <section id="reviews" class="scroll-mt-24">
+    <h2>Unsere Google Reviews</h2>
+    <p>
+      <a
+        href={googleReviewsUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="underline">{googleReviews.data.ratingLabel}</a
+      >
+    </p>
+    <ul class="mt-4 grid gap-4 sm:grid-cols-3">
+      {
+        googleReviews.data.items.map((review) => (
+          <li class="border-2 border-black bg-white p-4 shadow-[4px_4px_0_0_#000]">
+            <p
+              class="m-0 tracking-widest text-amber-500"
+              aria-label={`${review.stars} von 5 Sternen`}
+            >
+              {"★".repeat(review.stars)}
+              <span class="text-amber-500/25">{"★".repeat(5 - review.stars)}</span>
+            </p>
+            <blockquote class="m-0 mt-2">
+              <p class="m-0 text-sm leading-relaxed">„{review.text}“</p>
+            </blockquote>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section id="impressionen" class="scroll-mt-24">
+    <h2>Bilder</h2>
+    <ul class="mx-auto grid max-w-3xl gap-4 sm:grid-cols-2">
+      <li class="border-2 border-black shadow-[6px_6px_0_0_#000]">
+        <Image
+          src={OutsideFrontImage}
+          alt="Bar Uno von außen"
+          width={400}
+          densities={[1, 2]}
+          class="block aspect-[3/4] w-full object-cover"
+        />
+      </li>
+      <li class="border-2 border-black shadow-[6px_6px_0_0_#000]">
+        <Image
+          src={CocktailImage}
+          alt="Cocktail aus der Bar Uno"
+          width={400}
+          densities={[1, 2]}
+          class="block aspect-[3/4] w-full object-cover"
+        />
+      </li>
+    </ul>
+    <a
+      href="https://www.instagram.com/barunomunich/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mt-8 inline-flex items-center gap-2 border-2 border-black bg-white px-4 py-2 font-semibold shadow-[4px_4px_0_0_#000] transition-colors hover:bg-black hover:text-white hover:no-underline"
+    >
+      <InstagramIcon class="size-5 shrink-0" aria-hidden="true" />
+      Mehr auf Instagram
     </a>
   </section>
 
