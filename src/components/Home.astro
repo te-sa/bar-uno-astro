@@ -1,9 +1,11 @@
 ---
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import HeroImage from "../assets/bar-front.webp";
 import UnoLogo from "../assets/uno-logo.svg";
 
 const year = new Date().getFullYear();
+const menus = await getCollection("daily-menu");
 ---
 
 <header class="relative">
@@ -52,6 +54,29 @@ const year = new Date().getFullYear();
 
   <section id="specials" class="scroll-mt-24">
     <h2>Daily Specials</h2>
+    {
+      menus.map((menu) => (
+        <section
+          class="menu-card"
+          style="margin-bottom: 2rem; border-bottom: 1px solid #ccc;"
+        >
+          <h2>{menu.data.title}</h2>
+
+          <ul>
+            {menu.data.items.map((item) => (
+              <li style="margin-bottom: 1rem;">
+                <strong>{item.name}</strong> — {item.price} €
+                {item.comment && (
+                  <p style="font-style: italic; margin: 0; color: #555;">
+                    {item.comment}
+                  </p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
   </section>
 
   <section id="karte" class="scroll-mt-24">
