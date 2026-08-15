@@ -1,0 +1,22 @@
+backend:
+  name: github
+  repo: te-sa/bar-uno-astro
+  branch: main
+
+media_folder: /public/media
+public_folder: /media
+
+singletons:
+  - name: daily-menu
+    label: Tageskarte
+    file: /src/content/tageskarte.md
+    fields:
+      - { label: "Titel der Karte", name: title, widget: string }
+      - label: Tagesgerichte
+        name: items
+        widget: list
+        summary: "{{fields.name}} - {{fields.price}}"
+        fields:
+          - { label: Gericht, name: name, widget: string }
+          - { label: Preis, name: price, widget: string, hint: "z.B. 12,50" }
+          - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Allergene, Beilagen oder Beschreibung" }
