@@ -23,7 +23,15 @@ const privacyPolicyCollection = defineCollection({
 	}),
 });
 
+const siteNoticeCollection = defineCollection({
+	loader: glob({ pattern: "impressum.md", base: "./src/content" }),
+	schema: z.object({
+		title: z.string(),
+	}),
+});
+
 export const collections = {
 	"daily-menu": dailyMenuCollection,
 	"privacy-policy": privacyPolicyCollection,
+	"site-notice": siteNoticeCollection,
 };

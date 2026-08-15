@@ -26,3 +26,9 @@ singletons:
     fields:
       - { label: "Titel", name: title, widget: string }
       - { label: "Inhalt", name: body, widget: markdown }
+  - name: site-notice
+    label: Impressum
+    file: /src/content/impressum.md
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Inhalt", name: body, widget: markdown }
