@@ -94,21 +94,15 @@ function formatPrice(price: string) {
     <p>Tel: <a href="tel:+498924206252">089 242 062 52</a></p>
 
     <h3>Öffnungszeiten</h3>
-    <table class="border-separate border-spacing-y-1">
-      <tbody
-        ><tr class="border-b-2 border-black">
-          <td class="font-bold pr-1 align-top">Montag bis Freitag</td>
-          <td class="align-top">7:30 bis nach 24 Uhr</td>
-        </tr>
-        <tr class="border-b-2 border-black">
-          <td class="font-bold pr-1 align-top">Samstags und an Feiertagen</td>
-          <td class="align-top">17 bis nach 24 Uhr</td>
-        </tr>
-        <tr>
-          <td class="font-bold pr-1 align-top">Sonntags</td>
-          <td class="align-top">Geschlossen</td>
-        </tr>
-      </tbody>
-    </table>
+    <dl
+      class="grid grid-cols-1 min-[420px]:grid-cols-[auto_1fr] min-[420px]:gap-x-6 min-[420px]:gap-y-1 sm:gap-x-8"
+    >
+      <dt class="font-bold">Montag bis Freitag</dt>
+      <dd class="mb-3 last:mb-0 min-[420px]:mb-0">7:30 bis nach 24 Uhr</dd>
+      <dt class="font-bold">Samstags und an Feiertagen</dt>
+      <dd class="mb-3 last:mb-0 min-[420px]:mb-0">17 bis nach 24 Uhr</dd>
+      <dt class="font-bold">Sonntags</dt>
+      <dd class="mb-3 last:mb-0 min-[420px]:mb-0">Geschlossen</dd>
+    </dl>
   </section>
 </PageMain>
