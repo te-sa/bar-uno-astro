@@ -63,10 +63,24 @@ const allergensCollection = defineCollection({
 	}),
 });
 
+const googleReviewsCollection = defineCollection({
+	loader: glob({ pattern: "google-reviews.md", base: "./src/content" }),
+	schema: z.object({
+		ratingLabel: z.string(),
+		items: z.array(
+			z.object({
+				text: z.string(),
+				stars: z.number().min(1).max(5).default(5),
+			}),
+		),
+	}),
+});
+
 export const collections = {
 	"daily-menu": dailyMenuCollection,
 	menu: menuCollection,
 	"privacy-policy": privacyPolicyCollection,
 	"site-notice": siteNoticeCollection,
 	allergens: allergensCollection,
+	"google-reviews": googleReviewsCollection,
 };

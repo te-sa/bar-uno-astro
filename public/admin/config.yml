@@ -46,6 +46,18 @@ singletons:
         fields:
           - { label: Code, name: code, widget: string, hint: "z.B. A oder 10" }
           - { label: Bedeutung, name: label, widget: string }
+  - name: google-reviews
+    label: Google Reviews
+    file: /src/content/google-reviews.md
+    fields:
+      - { label: "Bewertungstext", name: ratingLabel, widget: string, hint: "z.B. 4,6 Sterne bei Google" }
+      - label: Reviews
+        name: items
+        widget: list
+        summary: "{{fields.stars}}★ — {{fields.text}}"
+        fields:
+          - { label: Text, name: text, widget: text }
+          - { label: Sterne, name: stars, widget: number, min: 1, max: 5, value_type: int, default: 5 }
 
 collections:
   - name: menu
