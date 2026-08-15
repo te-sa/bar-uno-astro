@@ -20,6 +20,26 @@ singletons:
           - { label: Gericht, name: name, widget: string }
           - { label: Preis, name: price, widget: string, hint: "z.B. 12,50" }
           - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Allergene, Beilagen oder Beschreibung" }
+  - name: menu
+    label: Karte
+    file: /src/content/sommerspecials.md
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Kommentar unter dem Titel", name: comment, widget: text, required: false }
+      - label: Abschnitte
+        name: sections
+        widget: list
+        summary: "{{fields.title}}"
+        fields:
+          - { label: "Abschnitts-Titel", name: title, widget: string }
+          - label: Getränke
+            name: items
+            widget: list
+            summary: "{{fields.name}} - {{fields.price}}"
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Preis, name: price, widget: string, hint: "z.B. 12,50" }
+              - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Zutaten oder Beschreibung" }
   - name: privacy-policy
     label: Datenschutz
     file: /src/content/datenschutz.md
