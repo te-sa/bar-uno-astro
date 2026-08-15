@@ -1,0 +1,40 @@
+---
+import ChevronLeft from "../assets/chevron-left.svg";
+import PageMain from "../components/PageMain.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Seite nicht gefunden — Bar Uno">
+	<SiteNav>
+		<a
+			href="/"
+			class="container mx-auto flex items-center gap-1.5 p-4"
+		>
+			<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
+			Zur Startseite
+		</a>
+	</SiteNav>
+	<PageMain>
+		<h1>Seite nicht gefunden</h1>
+		<p>
+			Diese Seite gibt es nicht — vielleicht ist der Link veraltet oder die
+			Adresse falsch geschrieben.
+		</p>
+		<a
+			href="/"
+			class="group mt-8 inline-flex items-center justify-between gap-4 border-2 border-black bg-black px-5 py-4 text-white shadow-[6px_6px_0_0_#000] transition-colors hover:bg-white hover:text-black"
+		>
+			<span class="text-xl font-bold sm:text-2xl">Zur Startseite</span>
+			<span class="shrink-0 text-2xl" aria-hidden="true">→</span>
+		</a>
+	</PageMain>
+	<SiteFooter />
+</Layout>
+
+<style is:global>
+	main {
+		align-content: center;
+	}
+</style>
