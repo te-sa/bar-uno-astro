@@ -26,9 +26,7 @@ if (!allergens) {
 		<h1>{allergens.data.title}</h1>
 		{
 			allergens.data.comment && (
-				<p style="font-style: italic; color: #555;">
-					{allergens.data.comment}
-				</p>
+				<p class="italic text-muted">{allergens.data.comment}</p>
 			)
 		}
 		<ul class="allergen-list">

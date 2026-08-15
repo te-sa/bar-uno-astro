@@ -43,40 +43,38 @@ function formatPrice(price: string) {
 		</nav>
 		{
 			karteSections.map((karte) => (
-				<section id={karte.id} class="scroll-mt-24" style="margin-top: 2rem;">
+				<section id={karte.id} class="mt-8 scroll-mt-24">
 					<h2>{karte.data.title}</h2>
 					{karte.data.comment && (
-						<p style="font-style: italic; color: #555;">{karte.data.comment}</p>
+						<p class="italic text-muted">{karte.data.comment}</p>
 					)}
 					{karte.data.sections.map((section) => (
-						<div style="margin-top: 1.5rem;">
+						<div class="mt-6">
 							{section.title && <h3>{section.title}</h3>}
 							{section.comment && (
-								<p style="font-style: italic; color: #555;">{section.comment}</p>
+								<p class="italic text-muted">{section.comment}</p>
 							)}
 							<ul>
 								{section.items.map((item) => (
-									<li style="margin-bottom: 1rem;">
+									<li class="mb-4">
 										<strong>{item.name}</strong>
 										{item.allergens && (
 											<AllergenLinks allergens={item.allergens} />
 										)}{" "}
 										— {formatPrice(item.price)}
 										{item.comment && (
-											<p style="font-style: italic; margin: 0; color: #555;">
-												{item.comment}
-											</p>
+											<p class="m-0 italic text-muted">{item.comment}</p>
 										)}
 									</li>
 								))}
 							</ul>
 							{section.note && (
-								<p style="font-size: 0.9rem; color: #555;">{section.note}</p>
+								<p class="text-sm text-muted">{section.note}</p>
 							)}
 						</div>
 					))}
 					{karte.data.note && (
-						<p style="font-size: 0.9rem; color: #555;">{karte.data.note}</p>
+						<p class="text-sm text-muted">{karte.data.note}</p>
 					)}
 				</section>
 			))

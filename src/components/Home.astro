@@ -69,14 +69,12 @@ const googleReviewsUrl =
     <ul>
       {
         menu.data.items.map((item) => (
-          <li style="margin-bottom: 1rem;">
+          <li class="mb-4">
             <strong>{item.name}</strong>
             {item.allergens && <AllergenLinks allergens={item.allergens} />}{" "}
             — {formatPrice(item.price)}
             {item.comment && (
-              <p style="font-style: italic; margin: 0; color: #555;">
-                {item.comment}
-              </p>
+              <p class="m-0 italic text-muted">{item.comment}</p>
             )}
           </li>
         ))
