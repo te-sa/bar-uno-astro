@@ -49,9 +49,24 @@ const siteNoticeCollection = defineCollection({
 	}),
 });
 
+const allergensCollection = defineCollection({
+	loader: glob({ pattern: "allergene.md", base: "./src/content" }),
+	schema: z.object({
+		title: z.string(),
+		comment: z.string().optional(),
+		items: z.array(
+			z.object({
+				code: z.string(),
+				label: z.string(),
+			}),
+		),
+	}),
+});
+
 export const collections = {
 	"daily-menu": dailyMenuCollection,
 	menu: menuCollection,
 	"privacy-policy": privacyPolicyCollection,
 	"site-notice": siteNoticeCollection,
+	allergens: allergensCollection,
 };

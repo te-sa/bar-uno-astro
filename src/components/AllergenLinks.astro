@@ -1,0 +1,36 @@
+---
+import { getEntry } from "astro:content";
+
+interface Props {
+	allergens: string;
+}
+
+const { allergens } = Astro.props;
+const parts = allergens
+	.split(",")
+	.map((part) => part.trim())
+	.filter(Boolean);
+
+const allergenList = await getEntry("allergens", "allergene");
+const knownCodes = new Set(
+	(allergenList?.data.items ?? []).map((item) => item.code.trim().toLowerCase()),
+);
+---
+
+<span style="color: #555;">
+	({
+		parts.map((part, index) => {
+			const anchor = part.toLowerCase();
+			return (
+				<>
+					{index > 0 && ", "}
+					{knownCodes.has(anchor) ? (
+						<a href={`/allergene#${anchor}`}>{part}</a>
+					) : (
+						part
+					)}
+				</>
+			);
+		})
+	})
+</span>

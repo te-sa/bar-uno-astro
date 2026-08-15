@@ -33,6 +33,19 @@ singletons:
     fields:
       - { label: "Titel", name: title, widget: string }
       - { label: "Inhalt", name: body, widget: markdown }
+  - name: allergens
+    label: Allergen Liste
+    file: /src/content/allergene.md
+    fields:
+      - { label: "Titel", name: title, widget: string }
+      - { label: "Kommentar unter dem Titel", name: comment, widget: text, required: false }
+      - label: Allergene
+        name: items
+        widget: list
+        summary: "{{fields.code}} — {{fields.label}}"
+        fields:
+          - { label: Code, name: code, widget: string, hint: "z.B. A oder 10" }
+          - { label: Bedeutung, name: label, widget: string }
 
 collections:
   - name: menu

@@ -1,0 +1,53 @@
+---
+import { getEntry } from "astro:content";
+import ChevronLeft from "../assets/chevron-left.svg";
+import PageMain from "../components/PageMain.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
+import Layout from "../layouts/Layout.astro";
+
+const allergens = await getEntry("allergens", "allergene");
+if (!allergens) {
+	throw new Error("Missing content entry: allergens/allergene");
+}
+---
+
+<Layout title={allergens.data.title}>
+	<SiteNav>
+		<a
+			href="/"
+			class="container mx-auto flex items-center gap-1.5 p-4"
+		>
+			<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
+			Zur Startseite
+		</a>
+	</SiteNav>
+	<PageMain>
+		<h1>{allergens.data.title}</h1>
+		{
+			allergens.data.comment && (
+				<p style="font-style: italic; color: #555;">
+					{allergens.data.comment}
+				</p>
+			)
+		}
+		<ul class="allergen-list">
+			{
+				allergens.data.items.map((item) => (
+				<li id={item.code.trim().toLowerCase()} class="scroll-mt-24">
+					<span><strong>{item.code}</strong> — {item.label}</span>
+				</li>
+				))
+			}
+		</ul>
+	</PageMain>
+	<SiteFooter />
+</Layout>
+
+<style>
+	.allergen-list :global(li:target > span) {
+		background-color: #ffe566;
+		border-radius: 0.25rem;
+		box-shadow: 0 0 0 0.25rem #ffe566;
+	}
+</style>
