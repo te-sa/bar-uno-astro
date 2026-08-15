@@ -18,8 +18,9 @@ singletons:
         summary: "{{fields.name}} - {{fields.price}}"
         fields:
           - { label: Gericht, name: name, widget: string }
+          - { label: Allergene, name: allergens, widget: string, required: false, hint: "z.B. A,g, vegetarisch" }
           - { label: Preis, name: price, widget: string, hint: "z.B. 12,50" }
-          - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Allergene, Beilagen oder Beschreibung" }
+          - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Beilagen oder Beschreibung" }
   - name: privacy-policy
     label: Datenschutz
     file: /src/content/datenschutz.md
@@ -61,5 +62,6 @@ collections:
             summary: "{{fields.name}} - {{fields.price}}"
             fields:
               - { label: Name, name: name, widget: string }
+              - { label: Allergene, name: allergens, widget: string, required: false, hint: "z.B. A,g, vegetarisch" }
               - { label: Preis, name: price, widget: string, hint: "z.B. 12,50 oder 3,50 / 6,50" }
               - { label: "Zusatzinfo / Kommentar", name: comment, widget: text, required: false, hint: "Optional: Zutaten oder Beschreibung" }

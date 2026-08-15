@@ -4,6 +4,7 @@ import { glob } from "astro/loaders";
 
 const menuItemSchema = z.object({
 	name: z.string(),
+	allergens: z.string().optional(),
 	price: z.string(),
 	comment: z.string().optional(),
 });
