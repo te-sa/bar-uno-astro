@@ -14,7 +14,10 @@ if (!siteNotice) {
 const { Content } = await render(siteNotice);
 ---
 
-<Layout title={siteNotice.data.title}>
+<Layout
+	title={`${siteNotice.data.title} | Bar Uno`}
+	description="Impressum und Anbieterkennzeichnung der Bar Uno, Ludwigstraße 11, 80539 München."
+>
 	<SiteNav>
 		<a
 			href="/"

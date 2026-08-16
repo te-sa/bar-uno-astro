@@ -1,9 +1,9 @@
 ---
 import { getEntry } from "astro:content";
 
-interface Props {
+type Props = {
 	allergens: string;
-}
+};
 
 const { allergens } = Astro.props;
 const parts = allergens
@@ -25,7 +25,7 @@ const knownCodes = new Set(
 				<>
 					{index > 0 && ", "}
 					{knownCodes.has(anchor) ? (
-						<a href={`/allergene#${anchor}`}>{part}</a>
+						<a href={`/allergene/#${anchor}`}>{part}</a>
 					) : (
 						part
 					)}
