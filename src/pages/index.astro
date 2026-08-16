@@ -3,9 +3,75 @@ import Home from "../components/Home.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteNav from "../components/SiteNav.astro";
 import Layout from "../layouts/Layout.astro";
+
+const siteUrl = Astro.site?.href ?? "https://www.bar-uno.de/";
+
+const jsonLd = [
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		name: "Bar Uno",
+		url: siteUrl,
+		inLanguage: "de-DE",
+	},
+	{
+		"@context": "https://schema.org",
+		"@type": "BarOrPub",
+		name: "Bar Uno",
+		url: siteUrl,
+		telephone: "+498924206252",
+		email: "info@bar-uno.de",
+		address: {
+			"@type": "PostalAddress",
+			streetAddress: "Ludwigstraße 11",
+			addressLocality: "München",
+			postalCode: "80539",
+			addressCountry: "DE",
+		},
+		geo: {
+			"@type": "GeoCoordinates",
+			latitude: 48.145395,
+			longitude: 11.578500,
+		},
+		servesCuisine: ["Italian", "Pinsa", "Cocktails"],
+		priceRange: "€€",
+		openingHoursSpecification: [
+			{
+				"@type": "OpeningHoursSpecification",
+				dayOfWeek: [
+					"Monday",
+					"Tuesday",
+					"Wednesday",
+					"Thursday",
+					"Friday",
+				],
+				opens: "07:30",
+				closes: "01:00",
+			},
+			{
+				"@type": "OpeningHoursSpecification",
+				dayOfWeek: "Saturday",
+				opens: "17:00",
+				closes: "01:00",
+			},
+			{
+				"@type": "OpeningHoursSpecification",
+				dayOfWeek: "Sunday",
+				opens: "00:00",
+				closes: "00:00",
+			},
+		],
+		menu: new URL("karte/", siteUrl).href,
+		sameAs: ["https://www.instagram.com/barunomunich/"],
+	},
+];
 ---
 
-<Layout>
+<Layout
+	title="Bar Uno — Bar & Bistro in München"
+	description="Bar Uno an der Ludwigstraße: Kaffee, Lunch, Cocktails und Speisen im Herzen von München. Persönlicher Service von morgens bis nach Mitternacht."
+	jsonLd={jsonLd}
+>
 	<Home>
 		<SiteNav>
 			<ul
@@ -13,7 +79,7 @@ import Layout from "../layouts/Layout.astro";
 			>
 				<li><a href="#zu-uns">Zu uns</a></li>
 				<li><a href="#specials">Specials</a></li>
-				<li><a href="/karte">Karte</a></li>
+				<li><a href="/karte/">Karte</a></li>
 				<li><a href="#kontakt">Kontakt</a></li>
 			</ul>
 		</SiteNav>

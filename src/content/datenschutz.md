@@ -64,7 +64,7 @@ Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kom
 Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:
 
 Saller & Saller GbR  
-Ludwigstrasse 11  
+Ludwigstraße 11  
 80539 München
 
 Telefon: [089 242 062 52](tel:+498924206252)  

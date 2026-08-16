@@ -7,7 +7,7 @@ Angaben gemäß § 5 TMG
 ## Kontakt
 
 Saller & Saller GbR  
-Ludwigstrasse 11  
+Ludwigstraße 11  
 80539 München  
 
 Tel: 089 242 062 52  

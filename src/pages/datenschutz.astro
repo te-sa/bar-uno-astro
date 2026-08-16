@@ -14,7 +14,10 @@ if (!gdpr) {
 const { Content } = await render(gdpr);
 ---
 
-<Layout title={gdpr.data.title}>
+<Layout
+	title={`${gdpr.data.title} | Bar Uno`}
+	description="Datenschutzerklärung der Bar Uno München — Informationen zur Verarbeitung personenbezogener Daten."
+>
 	<SiteNav>
 		<a
 			href="/"
