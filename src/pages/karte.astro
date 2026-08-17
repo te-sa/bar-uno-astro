@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ChevronLeft from "../assets/chevron-left.svg";
+import ChevronUp from "../assets/chevron-up.svg";
 import AllergenLinks from "../components/AllergenLinks.astro";
 import PageMain from "../components/PageMain.astro";
 import SiteFooter from "../components/SiteFooter.astro";
@@ -21,13 +22,18 @@ function formatPrice(price: string) {
 	description="Abendkarte der Bar Uno in München: Speisen, Cocktails, Weine, Biere und mehr."
 >
 	<SiteNav>
-		<a
-			href="/"
-			class="container mx-auto flex items-center gap-1.5 p-4"
+		<div
+			class="container mx-auto flex items-center justify-between gap-4 p-4"
 		>
-			<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
-			Zur Startseite
-		</a>
+			<a href="/" class="flex items-center gap-1.5">
+				<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
+				Zur Startseite
+			</a>
+			<a href="#top" class="flex items-center gap-1.5">
+				Nach oben
+				<ChevronUp class="size-4 shrink-0" aria-hidden="true" />
+			</a>
+		</div>
 	</SiteNav>
 	<PageMain>
 		<h1>Karte</h1>
