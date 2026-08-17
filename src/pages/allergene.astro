@@ -18,12 +18,21 @@ if (!allergens) {
 >
 	<SiteNav>
 		<a
-			href="/"
+			href="/karte/"
 			class="container mx-auto flex items-center gap-1.5 p-4"
+			data-back
 		>
 			<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
-			Zur Startseite
+			Zurück zur Karte
 		</a>
+		<script is:inline>
+			document.querySelector("[data-back]")?.addEventListener("click", (e) => {
+				if (history.length > 1) {
+					e.preventDefault();
+					history.back();
+				}
+			});
+		</script>
 	</SiteNav>
 	<PageMain>
 		<h1>{allergens.data.title}</h1>
