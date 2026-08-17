@@ -142,9 +142,25 @@ const structuredData = jsonLd
 
 	a {
 		text-underline-offset: 2px;
+		text-decoration: underline;
 	}
 
 	a:hover {
-		text-decoration: underline;
+		text-decoration-style: dotted;
+	}
+
+	body > nav:first-of-type a,
+	a.border-2.border-black {
+		text-decoration: none;
+	}
+
+	body > nav:first-of-type a:hover,
+	a.border-2.border-black:hover {
+		text-decoration: none;
+	}
+
+	a:focus-visible {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
 	}
 </style>
