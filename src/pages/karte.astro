@@ -29,12 +29,30 @@ function formatPrice(price: string) {
 				<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
 				Zur Startseite
 			</a>
-			<a href="#top" class="flex items-center gap-1.5">
+			<a
+				href="#top"
+				data-to-top
+				class="invisible flex items-center gap-1.5 opacity-0 transition-opacity data-[scrolled]:visible data-[scrolled]:opacity-100"
+			>
 				Nach oben
 				<ChevronUp class="size-4 shrink-0" aria-hidden="true" />
 			</a>
 		</div>
 	</SiteNav>
+	<script is:inline>
+		const toTopLink = document.querySelector("[data-to-top]");
+		const toTopThreshold = 200;
+
+		const updateToTopLink = () => {
+			toTopLink?.toggleAttribute(
+				"data-scrolled",
+				window.scrollY >= toTopThreshold,
+			);
+		};
+
+		updateToTopLink();
+		document.addEventListener("scroll", updateToTopLink, { passive: true });
+	</script>
 	<PageMain>
 		<h1>Karte</h1>
 		<nav aria-label="Kartenabschnitte">
