@@ -13,7 +13,9 @@ const parts = allergens
 
 const allergenList = await getEntry("allergens", "allergene");
 const knownCodes = new Set(
-	(allergenList?.data.items ?? []).map((item) => item.code.trim().toLowerCase()),
+	(allergenList?.data.items ?? []).map((item) =>
+		item.code.trim().toLowerCase(),
+	),
 );
 ---
 
