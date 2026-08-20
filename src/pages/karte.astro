@@ -1,11 +1,10 @@
 ---
 import { getCollection } from "astro:content";
-import ChevronLeft from "../assets/chevron-left.svg";
 import ChevronUp from "../assets/chevron-up.svg";
 import AllergenLinks from "../components/AllergenLinks.astro";
 import PageMain from "../components/PageMain.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import SiteNav from "../components/SiteNav.astro";
+import BasicSiteNav from "../components/BasicSiteNav.astro";
 import Layout from "../layouts/Layout.astro";
 
 const karteSections = (await getCollection("menu")).sort(
@@ -21,24 +20,16 @@ function formatPrice(price: string) {
 	title="Speise- & Getränkekarte | Bar Uno München"
 	description="Abendkarte der Bar Uno in München: Speisen, Cocktails, Weine, Biere und mehr."
 >
-	<SiteNav>
-		<div
-			class="container mx-auto flex items-center justify-between gap-4 p-4"
+	<BasicSiteNav>
+		<a
+			href="#top"
+			data-to-top
+			class="invisible flex items-center gap-1.5 opacity-0 transition-opacity data-[scrolled]:visible data-[scrolled]:opacity-100"
 		>
-			<a href="/" class="flex items-center gap-1.5">
-				<ChevronLeft class="size-4 shrink-0" aria-hidden="true" />
-				Zur Startseite
-			</a>
-			<a
-				href="#top"
-				data-to-top
-				class="invisible flex items-center gap-1.5 opacity-0 transition-opacity data-[scrolled]:visible data-[scrolled]:opacity-100"
-			>
-				Nach oben
-				<ChevronUp class="size-4 shrink-0" aria-hidden="true" />
-			</a>
-		</div>
-	</SiteNav>
+			Nach oben
+			<ChevronUp class="size-4" aria-hidden="true" />
+		</a>
+	</BasicSiteNav>
 	<script is:inline>
 		const toTopLink = document.querySelector("[data-to-top]");
 		const toTopThreshold = 200;

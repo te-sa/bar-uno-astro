@@ -1,0 +1,14 @@
+---
+import ChevronLeft from "../assets/chevron-left.svg";
+import SiteNav from "./SiteNav.astro";
+---
+
+<SiteNav>
+    <div class="container mx-auto flex items-center justify-between gap-4 p-4">
+        <a href="/" class="flex items-center gap-1.5">
+            <ChevronLeft class="size-4" aria-hidden="true" />
+            Zur Startseite
+        </a>
+        <slot />
+    </div>
+</SiteNav>

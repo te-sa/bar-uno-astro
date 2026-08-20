@@ -1,23 +1,15 @@
 ---
-import ChevronLeft from "../assets/chevron-left.svg";
 import PageMain from "../components/PageMain.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import SiteNav from "../components/SiteNav.astro";
 import Layout from "../layouts/Layout.astro";
+import BasicSiteNav from "../components/BasicSiteNav.astro";
 ---
 
 <Layout
 	title="Seite nicht gefunden | Bar Uno"
 	noindex
 >
-	<SiteNav>
-		<div class="container mx-auto flex items-center justify-between gap-4 p-4">
-			<a href="/" class="flex items-center gap-1.5">
-				<ChevronLeft class="size-4" aria-hidden="true" />
-				Zur Startseite
-			</a>
-		</div>
-	</SiteNav>
+	<BasicSiteNav/>
 	<PageMain>
 		<h1>Seite nicht gefunden</h1>
 		<p>	Diese Seite gibt es nicht mehr oder der Link enthält einen Tippfehler. Hier geht es weiter:</p>
