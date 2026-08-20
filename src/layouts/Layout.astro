@@ -9,9 +9,10 @@ type Props = {
 	description?: string;
 	ogImage?: ImageMetadata;
 	jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+	noindex?: boolean;
 };
 
-const DEFAULT_TITLE = "Bar Uno — Bar & Bistro in München";
+const DEFAULT_TITLE = "Bar Uno - Bar & Bistro in München";
 const DEFAULT_DESCRIPTION =
 	"Bar Uno an der Ludwigstraße: Kaffee, Lunch, Cocktails und Speisen im Herzen von München. Persönlicher Service von morgens bis nach Mitternacht.";
 
@@ -20,6 +21,7 @@ const {
 	description = DEFAULT_DESCRIPTION,
 	ogImage = defaultOgImage,
 	jsonLd,
+	noindex = false,
 } = Astro.props;
 
 const site = Astro.site ?? new URL("https://www.bar-uno.de");
@@ -50,7 +52,13 @@ const structuredData = jsonLd
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
 		<meta name="description" content={description} />
-		<link rel="canonical" href={canonicalURL} />
+		{
+			noindex ? (
+				<meta name="robots" content="noindex, follow" />
+			) : (
+				<link rel="canonical" href={canonicalURL} />
+			)
+		}
 
 		<meta property="og:type" content="website" />
 		<meta property="og:locale" content="de_DE" />
@@ -98,6 +106,8 @@ const structuredData = jsonLd
 		margin: 0;
 		width: 100%;
 		min-height: 100%;
+		display: flex;
+		flex-direction: column;
 	}
 
 	main h1 {

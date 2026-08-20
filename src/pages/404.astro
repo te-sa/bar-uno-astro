@@ -1,0 +1,42 @@
+---
+import ChevronLeft from "../assets/chevron-left.svg";
+import PageMain from "../components/PageMain.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import SiteNav from "../components/SiteNav.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+	title="Seite nicht gefunden | Bar Uno"
+	noindex
+>
+	<SiteNav>
+		<div class="container mx-auto flex items-center justify-between gap-4 p-4">
+			<a href="/" class="flex items-center gap-1.5">
+				<ChevronLeft class="size-4" aria-hidden="true" />
+				Zur Startseite
+			</a>
+		</div>
+	</SiteNav>
+	<PageMain>
+		<h1>Seite nicht gefunden</h1>
+		<p>	Diese Seite gibt es nicht mehr oder der Link enthält einen Tippfehler. Hier geht es weiter:</p>
+		<div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
+			<a
+				href="/"
+				class="inline-flex items-center justify-between gap-4 border-2 border-black bg-white px-5 py-4 font-semibold shadow-[4px_4px_0_0_#000] transition-colors hover:bg-black hover:text-white hover:no-underline"
+			>
+				Zur Startseite
+				<span class="shrink-0 text-2xl" aria-hidden="true">→</span>
+			</a>
+			<a
+				href="/karte/"
+				class="inline-flex items-center justify-between gap-4 border-2 border-black bg-black px-5 py-4 font-semibold text-white shadow-[4px_4px_0_0_#000] transition-colors hover:bg-white hover:text-black hover:no-underline"
+			>
+				Zur Abendkarte
+				<span class="shrink-0 text-2xl" aria-hidden="true">→</span>
+			</a>
+		</div>
+	</PageMain>
+	<SiteFooter />
+</Layout>
