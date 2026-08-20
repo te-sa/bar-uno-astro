@@ -15,8 +15,8 @@
 		"lint:fix": "biome check --write ."
 	},
 	"dependencies": {
-		"@astrojs/sitemap": "^3.7.2",
-		"astro": "^6.3.3"
+		"@astrojs/sitemap": "^3.7.3",
+		"astro": "^7.2.4"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.15",
