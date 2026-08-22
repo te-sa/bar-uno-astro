@@ -1,5 +1,5 @@
 ---
-title: Tageskarte 17.08.
+title: Tageskarte 21.08.
 items:
   - name: 'Hauslimo: Holunder-Cranberry'
     price: 4,80
