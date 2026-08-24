@@ -1,5 +1,5 @@
 ---
-title: Tageskarte 21.08.
+title: Tageskarte
 items:
   - name: 'Hauslimo: Erdbeere-Limette'
     allergens: ''
