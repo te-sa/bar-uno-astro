@@ -1,7 +1,7 @@
 ---
 title: Tageskarte 21.08.
 items:
-  - name: 'Hauslimo: Holunder-Cranberry'
+  - name: 'Hauslimo: Erdbeere-Limette'
     allergens: ''
     price: 4,80
     comment: ''
@@ -9,27 +9,27 @@ items:
     allergens: ''
     price: 6,80
     comment: mit Wiener Würstl +1,50
-  - name: Gemischter Salat mit Burratina und Honigmelone
+  - name: Gemischter Salat mit Halloumi und Grillpaprika
     allergens: ''
     price: 12,80
     comment: Blattsalate, Rucola, Radicchio, Tomate, Gurke
   - name: Pasta fredda
     allergens: ''
     price: 12,80
-    comment: kalte Pasta mit Thunfisch, Oliven, Tomaten
-  - name: Risotto mit getrüffelten Pilzen
+    comment: kalte Pasta mit Pesto, Burrata, Kirschtomaten
+  - name: Risotto mit Rucola und GHaernelen
     allergens: ''
     price: 12,80
     comment: ''
-  - name: Penne alla Norma
+  - name: Penne turchese
     allergens: ''
     price: 12,80
-    comment: Aubergine und Büffelmozzarella
-  - name: Linguine mit Sahne, Speck und Zucchini
+    comment: Gemüse und Schafskäse
+  - name: Linguine Romagnola
     allergens: ''
     price: 12,80
-    comment: ''
-  - name: Pinsa turchese (Gemüse und Schafskäse)
+    comment: Parmaschinken, Zucchini, Zitrone
+  - name: Pinsa mit Gorgonzola und Feigen
     allergens: ''
     price: 12,80
     comment: ''
