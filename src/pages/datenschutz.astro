@@ -1,8 +1,8 @@
 ---
 import { getEntry, render } from "astro:content";
+import BasicSiteNav from "../components/BasicSiteNav.astro";
 import PageMain from "../components/PageMain.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import BasicSiteNav from "../components/BasicSiteNav.astro";
 import Layout from "../layouts/Layout.astro";
 
 const gdpr = await getEntry("privacy-policy", "datenschutz");

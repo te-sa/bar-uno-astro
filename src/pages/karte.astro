@@ -2,9 +2,9 @@
 import { getCollection } from "astro:content";
 import ChevronUp from "../assets/chevron-up.svg";
 import AllergenLinks from "../components/AllergenLinks.astro";
+import BasicSiteNav from "../components/BasicSiteNav.astro";
 import PageMain from "../components/PageMain.astro";
 import SiteFooter from "../components/SiteFooter.astro";
-import BasicSiteNav from "../components/BasicSiteNav.astro";
 import Layout from "../layouts/Layout.astro";
 
 const karteSections = (await getCollection("menu")).sort(
