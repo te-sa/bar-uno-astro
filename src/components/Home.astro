@@ -65,11 +65,26 @@ const googleReviewsUrl =
       Pinsa. Unsere Gäste schätzen den persönlichen Service eines kleinen,
       ambitionierten Teams. Wir mögen, was wir tun und das merkt man.
     </p>
+    <a
+      href="/karte/"
+      class="group mt-8 flex items-center justify-between gap-4 border-2 border-black bg-black px-5 py-4 text-white shadow-[6px_6px_0_0_#000] transition-colors hover:bg-white hover:text-black"
+    >
+      <span>
+        <span class="block text-xl font-bold sm:text-2xl">
+          Zu unserer Standardkarte
+        </span>
+        <span
+          class="inline-block text-sm text-white/75 transition-colors group-hover:text-black/70"
+        >
+          Speisen, Cocktails, Weine, Biere & mehr
+        </span>
+      </span>
+      <span class="shrink-0 text-2xl" aria-hidden="true">→</span>
+    </a>
   </section>
 
   <section id="specials" class="scroll-mt-24">
-    <h2>Daily Lunch Specials (11:30 - 15:30)</h2>
-    <h3>{menu.data.title}</h3>
+    <h2>{menu.data.title}</h2>
     <ul>
       {
         menu.data.items.map((item) => (
@@ -84,21 +99,6 @@ const googleReviewsUrl =
         ))
       }
     </ul>
-    <a
-      href="/karte/"
-      class="group mt-8 flex items-center justify-between gap-4 border-2 border-black bg-black px-5 py-4 text-white shadow-[6px_6px_0_0_#000] transition-colors hover:bg-white hover:text-black"
-    >
-      <span>
-        <span class="block text-xl font-bold sm:text-2xl"
-          >Zu unserer Standardkarte</span
-        >
-        <span
-          class="inline-block text-sm text-white/75 transition-colors group-hover:text-black/70"
-          >Speisen, Cocktails, Weine, Biere & mehr</span
-        >
-      </span>
-      <span class="shrink-0 text-2xl" aria-hidden="true">→</span>
-    </a>
   </section>
 
   <section id="reviews" class="scroll-mt-24">

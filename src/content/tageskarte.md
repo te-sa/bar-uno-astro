@@ -1,5 +1,5 @@
 ---
-title: Tageskarte
+title: Daily Lunch Specials (11:30 - 15:30)
 items:
   - name: 'Hauslimo: Erdbeere-Limette'
     allergens: ''
