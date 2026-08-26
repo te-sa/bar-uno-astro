@@ -1,5 +1,5 @@
 ---
-title: Daily Lunch Specials (11:30 - 15:30)
+title: Weekly Specials 24.8. -28.8.
 items:
   - name: 'Hauslimo: Erdbeere-Limette'
     allergens: ''
@@ -9,7 +9,7 @@ items:
     allergens: ''
     price: 6,80
     comment: mit Wiener Würstl +1,50
-  - name: Gemischter Salat mit Halloumi und Grillpaprika
+  - name: Gemischter Salat mit Frittata und Grillpaprika
     allergens: ''
     price: 12,80
     comment: Blattsalate, Rucola, Radicchio, Tomate, Gurke
