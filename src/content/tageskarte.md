@@ -1,7 +1,7 @@
 ---
 title: Weekly Specials 24.8. -28.8.
 items:
-  - name: 'Hauslimo: Erdbeere-Limette'
+  - name: 'Hauslimo: Zitrone-Ingwer'
     allergens: ''
     price: 4,80
     comment: ''
@@ -21,19 +21,19 @@ items:
     allergens: ''
     price: 12,80
     comment: ''
-  - name: Penne turchese
+  - name: Penne Amatriciana
     allergens: ''
     price: 12,80
-    comment: Gemüse und Schafskäse
-  - name: Linguine Romagnola
+    comment: Guanciale und Pecorino
+  - name: Linguine Carbonara vegetarisch
     allergens: ''
     price: 12,80
-    comment: Parmaschinken, Zucchini, Zitrone
-  - name: Pinsa mit Gorgonzola und Feigen
+    comment: Zucchini
+  - name: Pinsa mit Ziegenkäse und Birne
     allergens: ''
     price: 12,80
     comment: ''
-  - name: Ricotta-Spinat-Tortelloni in Tomatenbutter
+  - name: Ricotta-Spinat-Tortelloni in heller Tomatensauce "Aurora"
     allergens: ''
     price: 12,80
     comment: ''
@@ -48,5 +48,9 @@ items:
   - name: Affogato (Café mit Vanilleeis)
     allergens: ''
     price: 4,20
+    comment: ''
+  - name: Panna cotta mit Himbeerspiegel
+    allergens: ''
+    price: 4,80
     comment: ''
 ---
