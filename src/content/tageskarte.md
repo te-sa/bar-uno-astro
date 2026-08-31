@@ -1,5 +1,5 @@
 ---
-title: Weekly Specials 24.8. -28.8.
+title: Weekly Specials 31.8.-4.9.
 items:
   - name: 'Hauslimo: Zitrone-Ingwer'
     allergens: ''
