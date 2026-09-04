@@ -16,14 +16,14 @@ import Layout from "../layouts/Layout.astro";
 		<div class="mt-8 flex flex-col gap-4 sm:flex-row sm:flex-wrap">
 			<a
 				href="/"
-				class="inline-flex items-center justify-between gap-4 border-2 border-black bg-white px-5 py-4 font-semibold shadow-[4px_4px_0_0_#000] transition-colors hover:bg-black hover:text-white hover:no-underline"
+				class="inline-flex items-center justify-between gap-4 border-2 border-foreground bg-background px-5 py-4 font-semibold shadow-[4px_4px_0_0_var(--color-foreground)] transition-colors hover:bg-foreground hover:text-background hover:no-underline"
 			>
 				Zur Startseite
 				<span class="shrink-0 text-2xl" aria-hidden="true">→</span>
 			</a>
 			<a
 				href="/karte/"
-				class="inline-flex items-center justify-between gap-4 border-2 border-black bg-black px-5 py-4 font-semibold text-white shadow-[4px_4px_0_0_#000] transition-colors hover:bg-white hover:text-black hover:no-underline"
+				class="inline-flex items-center justify-between gap-4 border-2 border-foreground bg-foreground px-5 py-4 font-semibold text-background shadow-[4px_4px_0_0_var(--color-foreground)] transition-colors hover:bg-background hover:text-foreground hover:no-underline"
 			>
 				Zur Karte
 				<span class="shrink-0 text-2xl" aria-hidden="true">→</span>
