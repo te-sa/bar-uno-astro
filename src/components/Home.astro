@@ -67,14 +67,14 @@ const googleReviewsUrl =
     </p>
     <a
       href="/karte/"
-      class="group mt-8 flex items-center justify-between gap-4 border-2 border-black bg-black px-5 py-4 text-white shadow-[6px_6px_0_0_#000] transition-colors hover:bg-white hover:text-black"
+      class="group mt-8 flex items-center justify-between gap-4 border-2 border-foreground bg-foreground px-5 py-4 text-background shadow-[6px_6px_0_0_var(--color-foreground)] transition-colors hover:bg-background hover:text-foreground"
     >
       <span>
         <span class="block text-xl font-bold sm:text-2xl">
           Zu unserer Standardkarte
         </span>
         <span
-          class="inline-block text-sm text-white/75 transition-colors group-hover:text-black/70"
+          class="inline-block text-sm text-background/75 transition-colors group-hover:text-foreground/70"
         >
           Speisen, Cocktails, Weine, Biere & mehr
         </span>
@@ -113,7 +113,7 @@ const googleReviewsUrl =
     <ul class="mt-4 grid gap-4 sm:grid-cols-3">
       {
         googleReviews.data.items.map((review) => (
-          <li class="border-2 border-black bg-white p-4 shadow-[4px_4px_0_0_#000]">
+          <li class="border-2 border-foreground bg-background p-4 shadow-[4px_4px_0_0_var(--color-foreground)]">
             <p class="m-0 tracking-widest text-amber-500">
               <span class="sr-only">{review.stars} von 5 Sternen</span>
               <span aria-hidden="true">
@@ -156,7 +156,7 @@ const googleReviewsUrl =
       href="https://www.instagram.com/barunomunich/"
       target="_blank"
       rel="noopener noreferrer"
-      class="mt-8 inline-flex items-center gap-2 border-2 border-black bg-white px-4 py-2 font-semibold shadow-[4px_4px_0_0_#000] transition-colors hover:bg-black hover:text-white hover:no-underline"
+      class="mt-8 inline-flex items-center gap-2 border-2 border-foreground bg-background px-4 py-2 font-semibold shadow-[4px_4px_0_0_var(--color-foreground)] transition-colors hover:bg-foreground hover:text-background hover:no-underline"
     >
       <InstagramIcon class="size-5 shrink-0" aria-hidden="true" />
       Mehr auf Instagram

@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-	--color-muted: #555555;
+	--color-background: light-dark(#ffffff, #121212);
+	--color-foreground: light-dark(#000000, #f5f5f5);
+	--color-muted: light-dark(#555555, #a3a3a3);
+	--color-shadow: color-mix(
+		in srgb,
+		var(--color-foreground) 12%,
+		var(--color-background)
+	);
 }
