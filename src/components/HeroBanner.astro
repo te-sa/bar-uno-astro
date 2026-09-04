@@ -1,0 +1,75 @@
+---
+import type { HeroBannerColor } from "../utils/heroBanner";
+import { formatBerlinDate } from "../utils/heroBanner";
+
+interface Props {
+	text: string;
+	color: HeroBannerColor;
+	startDate?: Date;
+	endDate?: Date;
+}
+
+const { text, color, startDate, endDate } = Astro.props;
+
+const colorClasses: Record<HeroBannerColor, string> = {
+	announcement: "bg-banner-announcement text-banner-announcement-foreground",
+	warning: "bg-banner-warning text-banner-warning-foreground",
+};
+---
+
+<div
+	data-hero-banner
+	data-start={startDate ? formatBerlinDate(startDate) : undefined}
+	data-end={endDate ? formatBerlinDate(endDate) : undefined}
+	role="status"
+	aria-live="polite"
+	class:list={[
+		"absolute inset-x-0 top-0 z-10 px-4 py-2 text-center text-sm font-semibold sm:text-base",
+		colorClasses[color],
+	]}
+>
+	{text}
+</div>
+
+<script is:inline>
+	(function () {
+		const banner = document.querySelector("[data-hero-banner]");
+		if (!(banner instanceof HTMLElement)) {
+			return;
+		}
+
+		const timezone = "Europe/Berlin";
+
+		function berlinDate(date) {
+			return new Intl.DateTimeFormat("en-CA", {
+				timeZone: timezone,
+				year: "numeric",
+				month: "2-digit",
+				day: "2-digit",
+			}).format(date);
+		}
+
+		function isVisible() {
+			const today = berlinDate(new Date());
+			const start = banner.dataset.start;
+			const end = banner.dataset.end;
+
+			if (start && today < start) {
+				return false;
+			}
+
+			if (end && today > end) {
+				return false;
+			}
+
+			return true;
+		}
+
+		function updateVisibility() {
+			banner.hidden = !isVisible();
+		}
+
+		updateVisibility();
+		window.setInterval(updateVisibility, 60_000);
+	})();
+</script>

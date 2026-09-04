@@ -76,6 +76,16 @@ const googleReviewsCollection = defineCollection({
 	}),
 });
 
+const heroBannerCollection = defineCollection({
+	loader: glob({ pattern: "hero-banner.md", base: "./src/content" }),
+	schema: z.object({
+		text: z.string(),
+		color: z.enum(["announcement", "warning"]),
+		startDate: z.coerce.date().optional(),
+		endDate: z.coerce.date().optional(),
+	}),
+});
+
 export const collections = {
 	"daily-menu": dailyMenuCollection,
 	menu: menuCollection,
@@ -83,4 +93,5 @@ export const collections = {
 	"site-notice": siteNoticeCollection,
 	allergens: allergensCollection,
 	"google-reviews": googleReviewsCollection,
+	"hero-banner": heroBannerCollection,
 };

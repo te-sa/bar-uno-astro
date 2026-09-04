@@ -9,4 +9,8 @@
 		var(--color-foreground) 12%,
 		var(--color-background)
 	);
+	--color-banner-announcement: light-dark(#bbf7d0, #166534);
+	--color-banner-announcement-foreground: light-dark(#14532d, #dcfce7);
+	--color-banner-warning: light-dark(#fed7aa, #9a3412);
+	--color-banner-warning-foreground: light-dark(#9a3412, #ffedd5);
 }

@@ -7,7 +7,9 @@ import InstagramIcon from "../assets/instagram.svg";
 import OutsideFrontImage from "../assets/outside-front.webp";
 import UnoLogo from "../assets/uno-logo.svg";
 import AllergenLinks from "./AllergenLinks.astro";
+import HeroBanner from "./HeroBanner.astro";
 import PageMain from "./PageMain.astro";
+import { shouldRenderHeroBannerAtBuild } from "../utils/heroBanner";
 
 const menu = await getEntry("daily-menu", "tageskarte");
 if (!menu) {
@@ -18,6 +20,11 @@ const googleReviews = await getEntry("google-reviews", "google-reviews");
 if (!googleReviews) {
 	throw new Error("Missing content entry: google-reviews/google-reviews");
 }
+
+const heroBannerEntry = await getEntry("hero-banner", "hero-banner");
+const heroBanner = heroBannerEntry?.data;
+const showHeroBanner =
+	heroBanner !== undefined && shouldRenderHeroBannerAtBuild(heroBanner);
 
 function formatPrice(price: string) {
 	return /^\d/.test(price) ? `${price} €` : price;
@@ -30,6 +37,16 @@ const googleReviewsUrl =
 ---
 
 <header class="relative">
+  {
+    showHeroBanner && heroBanner && (
+      <HeroBanner
+        text={heroBanner.text}
+        color={heroBanner.color}
+        startDate={heroBanner.startDate}
+        endDate={heroBanner.endDate}
+      />
+    )
+  }
   <Image
     src={HeroImage}
     alt="Bar Uno Außenansicht"
