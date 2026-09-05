@@ -63,13 +63,6 @@ singletons:
     file: /src/content/hero-banner.md
     fields:
       - { label: Text, name: text, widget: text, hint: "Kurze Ankündigung für die Startseite" }
-      - label: Farbe
-        name: color
-        widget: select
-        options:
-          - { label: "Ankündigung (Grün)", value: announcement }
-          - { label: "Hinweis (Orange)", value: warning }
-        default: announcement
       - { label: "Sichtbar ab", name: startDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "Leer lassen = sofort sichtbar" }
       - { label: "Sichtbar bis", name: endDate, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, required: false, hint: "Leer lassen = unbegrenzt sichtbar" }
 

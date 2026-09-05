@@ -80,7 +80,6 @@ const heroBannerCollection = defineCollection({
 	loader: glob({ pattern: "hero-banner.md", base: "./src/content" }),
 	schema: z.object({
 		text: z.string(),
-		color: z.enum(["announcement", "warning"]),
 		startDate: z.coerce.date().optional(),
 		endDate: z.coerce.date().optional(),
 	}),

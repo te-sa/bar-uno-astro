@@ -1,10 +1,7 @@
 const BERLIN_TIMEZONE = "Europe/Berlin";
 
-export type HeroBannerColor = "announcement" | "warning";
-
 export type HeroBannerData = {
 	text: string;
-	color: HeroBannerColor;
 	startDate?: Date;
 	endDate?: Date;
 };
@@ -18,27 +15,6 @@ export function formatBerlinDate(date: Date): string {
 	}).format(date);
 }
 
-export function isHeroBannerActive(
-	banner: HeroBannerData,
-	now = new Date(),
-): boolean {
-	if (!banner.text.trim()) {
-		return false;
-	}
-
-	const today = formatBerlinDate(now);
-
-	if (banner.startDate && today < formatBerlinDate(banner.startDate)) {
-		return false;
-	}
-
-	if (banner.endDate && today > formatBerlinDate(banner.endDate)) {
-		return false;
-	}
-
-	return true;
-}
-
 /** Omit expired banners from static HTML at build time. */
 export function shouldRenderHeroBannerAtBuild(
 	banner: HeroBannerData,
@@ -48,7 +24,10 @@ export function shouldRenderHeroBannerAtBuild(
 		return false;
 	}
 
-	if (banner.endDate && formatBerlinDate(now) > formatBerlinDate(banner.endDate)) {
+	if (
+		banner.endDate &&
+		formatBerlinDate(now) > formatBerlinDate(banner.endDate)
+	) {
 		return false;
 	}
 
