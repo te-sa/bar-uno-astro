@@ -1,20 +1,10 @@
 ---
-import type { HeroBannerColor } from "../utils/heroBanner";
+import type { HeroBannerData } from "../utils/heroBanner";
 import { formatBerlinDate } from "../utils/heroBanner";
 
-interface Props {
-	text: string;
-	color: HeroBannerColor;
-	startDate?: Date;
-	endDate?: Date;
-}
+type Props = HeroBannerData;
 
-const { text, color, startDate, endDate } = Astro.props;
-
-const colorClasses: Record<HeroBannerColor, string> = {
-	announcement: "bg-banner-announcement text-banner-announcement-foreground",
-	warning: "bg-banner-warning text-banner-warning-foreground",
-};
+const { text, startDate, endDate } = Astro.props;
 ---
 
 <div
@@ -23,12 +13,9 @@ const colorClasses: Record<HeroBannerColor, string> = {
 	data-end={endDate ? formatBerlinDate(endDate) : undefined}
 	role="status"
 	aria-live="polite"
-	class:list={[
-		"absolute inset-x-0 top-0 z-10 px-4 py-2 text-center text-sm font-semibold sm:text-base",
-		colorClasses[color],
-	]}
+	class="absolute inset-x-0 top-0 z-10 flex items-baseline gap-2.5 px-4 py-2.5 text-sm font-semibold sm:gap-3 sm:text-base bg-foreground text-background shadow-[0_2px_8px_-2px_var(--color-muted),0_8px_24px_-4px_var(--color-muted),0_20px_48px_-8px_var(--color-muted)]"
 >
-	{text}
+	<p class="m-0 min-w-0 max-w-prose line-clamp-2 text-left leading-snug">{text}</p>
 </div>
 
 <script is:inline>

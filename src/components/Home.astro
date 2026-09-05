@@ -6,10 +6,10 @@ import CocktailImage from "../assets/cocktail.webp";
 import InstagramIcon from "../assets/instagram.svg";
 import OutsideFrontImage from "../assets/outside-front.webp";
 import UnoLogo from "../assets/uno-logo.svg";
+import { shouldRenderHeroBannerAtBuild } from "../utils/heroBanner";
 import AllergenLinks from "./AllergenLinks.astro";
 import HeroBanner from "./HeroBanner.astro";
 import PageMain from "./PageMain.astro";
-import { shouldRenderHeroBannerAtBuild } from "../utils/heroBanner";
 
 const menu = await getEntry("daily-menu", "tageskarte");
 if (!menu) {
@@ -23,8 +23,6 @@ if (!googleReviews) {
 
 const heroBannerEntry = await getEntry("hero-banner", "hero-banner");
 const heroBanner = heroBannerEntry?.data;
-const showHeroBanner =
-	heroBanner !== undefined && shouldRenderHeroBannerAtBuild(heroBanner);
 
 function formatPrice(price: string) {
 	return /^\d/.test(price) ? `${price} €` : price;
@@ -38,10 +36,9 @@ const googleReviewsUrl =
 
 <header class="relative">
   {
-    showHeroBanner && heroBanner && (
+    heroBanner && shouldRenderHeroBannerAtBuild(heroBanner) && (
       <HeroBanner
         text={heroBanner.text}
-        color={heroBanner.color}
         startDate={heroBanner.startDate}
         endDate={heroBanner.endDate}
       />
