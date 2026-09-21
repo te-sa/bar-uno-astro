@@ -1,39 +1,35 @@
 ---
-title: Weekly Specials 31.8.-4.9.
+title: Weekly Specials 21.-25.9
 items:
-  - name: 'Hauslimo: Zitrone-Ingwer'
+  - name: 'Hauslimo: Zitrone-Honig'
     allergens: ''
     price: 4,80
     comment: ''
-  - name: Kartoffelsuppe
+  - name: Kartoffel-Zucchini-Suppe
     allergens: ''
     price: 6,80
     comment: mit Wiener Würstl +1,50
-  - name: Gemischter Salat mit Frittata und Grillpaprika
+  - name: Gemischter Salat mit Feigen und Burrata
     allergens: ''
     price: 12,80
     comment: Blattsalate, Rucola, Radicchio, Tomate, Gurke
-  - name: Pasta fredda
-    allergens: ''
-    price: 12,80
-    comment: kalte Pasta mit Pesto, Burrata, Kirschtomaten
-  - name: Risotto mit Rucola und GHaernelen
+  - name: Risotto mit Zucchini und Garnelen
     allergens: ''
     price: 12,80
     comment: ''
-  - name: Penne Amatriciana
+  - name: Penne Salsaiccia pasticciata
     allergens: ''
     price: 12,80
-    comment: Guanciale und Pecorino
-  - name: Linguine Carbonara vegetarisch
-    allergens: ''
-    price: 12,80
-    comment: Zucchini
-  - name: Pinsa mit Ziegenkäse und Birne
+    comment: mit einem Klecks Bechamel
+  - name: Linguine mit Rucolapesto und Kirschtomaten
     allergens: ''
     price: 12,80
     comment: ''
-  - name: Ricotta-Spinat-Tortelloni in heller Tomatensauce "Aurora"
+  - name: Pinsa Ortolana piccante
+    allergens: ''
+    price: 12,80
+    comment: mit scharfem Gemüse
+  - name: Ricotta-Spinat-Tortelloni mit Parmesancreme
     allergens: ''
     price: 12,80
     comment: ''
