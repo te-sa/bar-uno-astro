@@ -1,48 +1,48 @@
 ---
-title: Weekly Specials 12.10.-17.10
+title: Weekly Specials 26.10.-30.10.
 items:
-  - name: 'Hauslimo: Orange-Ingwer-Ahornsirup'
+  - name: 'Hauslimo: Cranberry-Limette'
     allergens: ''
-    price: 4,80
+    price: '4,80'
     comment: ''
-  - name: Kartoffel-Suppe
+  - name: Kartoffel-Zucchini-Suppe
     allergens: ''
-    price: 6,80
+    price: '6,80'
     comment: mit Wiener Würstl +1,50
-  - name: Gemischter Salat mit Burrata und rote Bete
+  - name: Gemischter Salat mit Lachs, Pistazien und Zitronenabrieb
     allergens: ''
-    price: 12,80
+    price: '12,80'
     comment: Blattsalate, Rucola, Radicchio, Tomate, Gurke
-  - name: Risotto mit Garnelen und Rucola
+  - name: Risotto mit Steinpilzen und Pfifferlingen
     allergens: ''
-    price: 12,80
+    price: '12,80'
     comment: ''
-  - name: Penne mit Mixragout
+  - name: Penne mit Puten-Paprika-Ragout
     allergens: ''
-    price: 12,80
+    price: '12,80'
     comment: ''
-  - name: Linguine mit Gorgonzola und Kürbis
+  - name: Linguine mit Kürbiscreme und Büffelmozzarella
     allergens: ''
-    price: 12,80
+    price: '12,80'
     comment: ''
   - name: Pinsa mit Mailänder Salami
     allergens: ''
-    price: 12,80
-    comment: mit scharfem Gemüse
-  - name: Ricotta-Spinat-Tortelloni in Salbeibutter
-    allergens: ''
-    price: 12,80
+    price: '12,80'
     comment: ''
+  - name: Ricotta-Spinat-Tortelloni "Aurora"
+    allergens: ''
+    price: '12,80'
+    comment: Tomaten-Sahne-Sauce
   - name: Vegetarische Lasagne
     allergens: ''
-    price: 12,80
+    price: '12,80'
     comment: ''
   - name: Tiramisu
     allergens: ''
-    price: 4,80
+    price: '4,80'
     comment: ''
   - name: Affogato (Café mit Vanilleeis)
     allergens: ''
-    price: 4,20
+    price: '4,20'
     comment: ''
 ---
