@@ -1,7 +1,7 @@
 ---
 title: Weekly Specials 26.10.-30.10.
 items:
-  - name: 'Hauslimo: Cranberry-Limette'
+  - name: 'Hauslimo: Ingwer-Zitrone'
     allergens: ''
     price: '4,80'
     comment: ''
@@ -9,27 +9,27 @@ items:
     allergens: ''
     price: '6,80'
     comment: mit Wiener Würstl +1,50
-  - name: Gemischter Salat mit Lachs, Pistazien und Zitronenabrieb
+  - name: Gemischter Salat mit Lachs, Pistazien und Orangenfilets
     allergens: ''
     price: '12,80'
     comment: Blattsalate, Rucola, Radicchio, Tomate, Gurke
-  - name: Risotto mit Steinpilzen und Pfifferlingen
+  - name: Risotto mit Garnelen und Zucchini
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Penne mit Puten-Paprika-Ragout
+  - name: Penne mit Schinken, Erbsen und Sahne
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Linguine mit Kürbiscreme und Büffelmozzarella
+  - name: Linguine mit pikanter Tomaten-Gemüse-Sauce
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Pinsa mit Mailänder Salami
+  - name: Pinsa mit Kürbis und Gorgonzola
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Ricotta-Spinat-Tortelloni "Aurora"
+  - name: Ricotta-Spinat-Tortelloni in Salbeibutter
     allergens: ''
     price: '12,80'
     comment: Tomaten-Sahne-Sauce
