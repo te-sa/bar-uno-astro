@@ -1,5 +1,5 @@
 ---
-title: Weekly Specials 26.10.-30.10.
+title: Weekly Specials 02.11. - 06.11.2026
 items:
   - name: 'Hauslimo: Ingwer-Zitrone'
     allergens: ''
