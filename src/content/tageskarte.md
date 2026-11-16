@@ -1,7 +1,7 @@
 ---
-title: Weekly Specials 09.11.-13.11.2026
+title: Weekly Specials 16.11. - 20.11.
 items:
-  - name: 'Hauslimo: Orange-Honig'
+  - name: 'Hauslimo: Aprikose-Himbeer'
     allergens: ''
     price: '4,80'
     comment: ''
@@ -9,30 +9,30 @@ items:
     allergens: ''
     price: '6,80'
     comment: mit Wiener Würstl +1,50
-  - name: Gemischter Salat mit Birne, Schafskäse und Walnüssen
+  - name: Gemischter Salat mit roter Bete und Ziegenkäse
     allergens: ''
     price: '12,80'
     comment: Blattsalate, Rucola, Radicchio, Tomate, Gurke
-  - name: Risotto mit Radicchio und Ziegenkäse
+  - name: Risotto mit Pilzen
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Penne mit Salsicchia und Pilzen
+  - name: Penne in Sahne-Speck-Zuchhini-Sauce
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Linguine mit Aubergine, Tomnate und Pesto
+  - name: Linguine mit Garnelen und Kirschtomaten
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Pinsa mit
+  - name: Pinsa mit Radicchio und Burrata
     allergens: ''
     price: '12,80'
     comment: ''
-  - name: Ricotta-Spinat-Tortelloni in Parmesancreme
+  - name: Ricotta-Spinat-Tortelloni in Thymiancreme
     allergens: ''
     price: '12,80'
-    comment: Tomaten-Sahne-Sauce
+    comment: ''
   - name: Vegetarische Lasagne
     allergens: ''
     price: '12,80'
